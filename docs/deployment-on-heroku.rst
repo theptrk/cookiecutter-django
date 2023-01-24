@@ -12,7 +12,9 @@ Run these commands to deploy the project to Heroku:
 
     heroku create --buildpack heroku/python
 
-    heroku addons:create heroku-postgresql:hobby-dev
+    # Note: heroku no longer has a free tier postgres. See below for tiers
+    # https://elements.heroku.com/addons/heroku-postgresql
+    heroku addons:create heroku-postgresql:basic
     # On Windows use double quotes for the time zone, e.g.
     # heroku pg:backups schedule --at "02:00 America/Los_Angeles" DATABASE_URL
     heroku pg:backups schedule --at '02:00 America/Los_Angeles' DATABASE_URL
